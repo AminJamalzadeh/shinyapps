@@ -2,7 +2,10 @@ library(shiny)
 
 shinyServer(function(input, output) {
 
-    output$ab.out <- renderPrint("See http://shiny.rstudio.com/gallery/actionbutton-demo.html how button works")
+    output$ab.out <- renderPrint({
+        print("For every press within a session, value is increased by 1.")
+        print(input$ab.val)
+    })
     output$cgi.out <- renderPrint(str(input$cgi.val))
     output$date.out <- renderPrint(str(input$date.val))
     output$dr.out <- renderPrint(str(input$dr.val))

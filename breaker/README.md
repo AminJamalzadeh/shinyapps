@@ -6,5 +6,5 @@ You can run this example from R by typing
 
 ```r
 library(shiny)
-runGitHub("romunov/shinyapps", subdir = "input_values")
+runGitHub("romunov/shinyapps", subdir = "breaker")
 ```

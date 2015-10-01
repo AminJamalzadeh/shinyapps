@@ -27,7 +27,7 @@ out <- leaflet() %>%
                 stroke = TRUE, color = "black", weight = 1, fillOpacity = 0.5, smoothFactor = 0.5,
                 fillColor = ~colorFactor("Blues", domain = lov$cl)(cl),
                 label = ~paste(numpts), group = "Lovisce") %>%
-    addPolygons(data = uo, group = "Upravljavsko obmocje",
+    addPolygons(data = uo[!is.na(uo$numpts), ], group = "Upravljavsko obmocje",
                 stroke = TRUE, color = "black", weight = 1, fillOpacity = 0.5, smoothFactor = 0.5,
                 fillColor = ~colorFactor("Blues", domain = uo$cl)(cl),
                 label = ~paste(numpts)) %>%

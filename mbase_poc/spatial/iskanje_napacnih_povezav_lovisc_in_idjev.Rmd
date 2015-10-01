@@ -1,0 +1,18 @@
+---
+title: "Seznam lovišč s podvojenim imenom"
+author: "Roman Luštrik"
+date: "01. oktober 2015"
+output: html_document
+---
+
+```{r}
+ld <- read.table("LOVISCA_ELIMINATED_corr_simp.csv", header = TRUE, sep = ";", encoding = "UTF-8")
+
+head(ld)
+ld$IME_LOV.C.100 <- tolower(ld$IME_LOV.C.100)
+dups <- ld[duplicated(ld$IME_LOV.C.100) | duplicated(ld$IME_LOV.C.100, fromLast = TRUE), ]
+dups[order(dups$IME_LOV.C.100), ]
+
+
+```
+
